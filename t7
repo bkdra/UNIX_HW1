@@ -1,0 +1,29 @@
+_________
+_________
+    .
+    .
+    .
+_________
+#
+#Now get rid of ";" that aren't needed because they're at the start of line:
+s/^;//
+#
+#So now we have whole sed commands on lines.
+#Complete the lines below:
+s,^Z,_____________,
+s,^C\(.*\),_____________,
+s,^W\(.*\),{____________},
+s,^D,{_____________},
+s,^f,_____________,
+#
+#Next one uses generic labels, but line 63 above is needed to get them unique:
+s_^F_tlabel7;:label7_
+#
+#These add an unusual symbol ("\v", which doesn't occur in the input) to mark
+#out the $-#, so that line 63 above can find them and convert them:
+s_^\$-_&\v_
+s_, *\$-_&\v_
+#
+#These clean up the backquotes:
+s_\f_\\;_g
+s_\h_\\\\_g

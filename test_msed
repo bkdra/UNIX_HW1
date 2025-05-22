@@ -51,6 +51,14 @@ exit 0
 #Note: But, to keep things simple, we won't worry about: "[;]".
 #Note: In our new version of sed, we like the fact that ";" will cause breaks
 #      for i, a, c, C, w, W, r.
+:x;s/\n//;tm;:m;s/^[^s]/&/;tn;s/s\(.\).*\1.*\1[;\n]*/&/;tn;N;Tx;:n # 處理s開頭，內有;的情形
+:x;s/\n//;tm;:m;s/^;[^s]/&/;tn;s/s\(.\).*\1.*\1[;\n]*/&/;tn;N;Tx;:n # 處理;s開頭，內有;的情形
+
+:x;s/\n//;tm;:m;s/^[^y]/&/;tn;s/y\(.\).*\1.*\1[;\n]*/&/;tn;N;Tx;:n # 處理y開頭，內有;的情形
+:x;s/\n//;tm;:m;s/^;[^y]/&/;tn;s/y\(.\).*\1.*\1[;\n]*/&/;tn;N;Tx;:n # 處理;y開頭，內有;的情形
+
+:x;s/\n//;tm;:m;s/^[^/]/&/;tn;s,/.*/,&,p;tn;N;Tx;:n # 開頭是/，內有;的情形
+:x;s/\n//;tm;:m;s/^;[^/]/&/;tn;s,/.*/,&,p;tn;N;Tx;:n # 開頭是;/，內有;的情形
 _________
 _________
     .

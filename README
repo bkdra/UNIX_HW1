@@ -1,68 +1,14 @@
                            UNIX System Programming
                     Main Programming Assignment, Part 1
+* 說明
+此程式是csh script以及sed來擴充原有sed的功能，將其稱為msed，而擴充的內容主要是增加新的sed 指令，或是修改原有sed指定的功能。
 
-Due: Sunday, June 1  at  2:00 pm.
-
-Submission method: You will post to the course website. 
-
-Submission rules: I REQUIRE you to FOLLOW THESE RULES:
-
-                  1. Submit one cshell file named "msed"
-                   
-                  2. Submissions made after the deadline will be ignored.
-                     (That means: no late submissions on this assignment.)
-                     (By the way, assignments are a significant part of your
-                     grade. So start early and ask questions.)
-
-                  3. You cannot use any awk on this assignment (that will be
-                     the part 2 assignment for later).
-
-Getting help:   - The Professor has office hours on Monday from 12:00-2:00, 
-                  and on Wednesday from 11:00-1:00, in room 9037.  He can also
-                  be reached by email (stevewhaga@yahoo.com).
-                - The TAs are also available to answer your questions.
-                - You may also discuss the ideas of the assignment with your
-                  classmates. Such discussions can be quite helpful to your 
-                  learning -- IF you ONLY talk about the general concepts of
-                  the steps of the assignment.
-                - If, however, you tell other students the specific details
-                  of your implementation, then you aren't helping each other
-                  to learn; you are just doing the work for them.
-                  In other words, you are cheating. You CANNOT show another
-                  student ANY part of the answer to the assignment.
-                - You may also discuss the ideas of the assignment with a GPT.
-                  Such discussions can be quite helpful to your learning --
-                  IF you also discuss with the LLM about why it works.
-                  AND IF you don't just trust its answers (because sed is the
-                  kind of language that LLMs tend to not do as well on).
-
-Cheating policy:  We encourage students to form study groups. But this doesn't
-                  mean sharing code. If students are found to be sharing work,
-                  they can receive a 0 for the entire course, or worse.
-                  It's cheating to let other students see your work, or to let
-                  them look over your shoulder when code is on your screen.
-
-                  A good way to know you cheated: if you have code that is in
-                  your solution just because another student told you to put
-                  it there, but you don't actually understand it.
-                  If you are still unsure, ask the TA for more explanation.
-
-                  We always look for evidence of cheating, so don't do it.
-                  (In any event, even if you do not get caught, those who 
-                  copy the homework will not learn the material, so they 
-                  will fail the exam.)
-
-Most Important  The programming assignments are a large part of the grade.
-Things to Know: This large point value means that, if you don't do them, you
-                may fail.
-                The large point value also explains why the policy against
-                cheating is strictly enforced.
-                
-
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
-
-Assignment overview:
+* 執行方式
+和原有sed指令執行方式相同，要提供msed程式一個input以及sed指令，而他會輸出對input處理後的結果
+> % echo ABC | ./msed 's/$2/\$3/;/$4/p' B b C -n
+> A$3C
+> %
+* Assignment overview:
 
 This assignment will extend the behavior of sed.
 

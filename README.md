@@ -1,13 +1,14 @@
-                           UNIX System Programming
-                    Main Programming Assignment, Part 1
+# UNIX System Programming Main Programming Assignment, Part 1
 * 說明
 此程式是csh script以及sed來擴充原有sed的功能，將其稱為msed，而擴充的內容主要是增加新的sed 指令，或是修改原有sed指定的功能。
 
 * 執行方式
 和原有sed指令執行方式相同，要提供msed程式一個input以及sed指令，而他會輸出對input處理後的結果
-> % echo ABC | ./msed 's/$2/\$3/;/$4/p' B b C -n
-> A$3C
-> %
+```
+% echo ABC | ./msed 's/$2/\$3/;/$4/p' B b C -n
+A$3C
+%
+```
 * Assignment overview:
 
 This assignment will extend the behavior of sed.
